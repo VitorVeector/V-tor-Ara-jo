@@ -1,0 +1,25 @@
+// ----- COLORS -----
+$primary-color: #5900ff;
+$dark-background-color: #060618;
+$light-background-color: #e4fdff;
+$amoled: #000;
+$text-color: #f4f2ff;
+$dark-text-color: #57737A;
+
+// ----- FONT-SIZE -----
+$md: 16px;
+$sm: 12px;
+$bg: 20px;
+$xx: 26px;
+$xxl: 32px;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $dark-background-color;
+    color: $text-color;
+}
