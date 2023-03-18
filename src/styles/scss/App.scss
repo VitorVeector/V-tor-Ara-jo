@@ -1,10 +1,16 @@
 // ----- COLORS -----
-$primary-color: #5900ff;
-$dark-background-color: #060618;
+$primary: #5900ff;
+$dark-background-color: #37373f;
 $light-background-color: #e4fdff;
 $amoled: #000;
-$text-color: #f4f2ff;
-$dark-text-color: #57737A;
+$text-color-light: #f4f2ff;
+$text-color-dark: #201f22;
+$bg-span_skills-light: #d2cbe4;
+$bg-span_skills-dark: #2a1e2c;
+
+$bg-span_skills-light-hover: #b49bc40c;
+$bg-span_skills-dark-hover: #2a1e2c0c;
+
 
 // ----- FONT-SIZE -----
 $md: 16px;
@@ -20,6 +26,21 @@ $xxl: 32px;
 }
 
 body{
-    background-color: $dark-background-color;
-    color: $text-color;
+    background: linear-gradient(to right, $dark-background-color, $amoled);
+    background-size: 400% 400%;
+    height: 100vh;
+    animation: bg-animation 15s ease infinite;
+    color: $text-color-light;
 }
+
+@keyframes bg-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

@@ -19,10 +19,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"]
-    }
+    "types": [
+      "react",
+      "react-dom",
+      "react-scripts",
+      "node",
+      "*.svg"
+    ]
   },
   "include": [
     "src"

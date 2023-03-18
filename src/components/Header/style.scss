@@ -20,11 +20,10 @@
                     padding: 0 24px;
                     position: relative;
                     
-
                     a{
                         text-decoration: none;
                         font-weight: bolder;
-                        color: $text-color;
+                        color: $text-color-light;
                         text-transform: lowercase;
                         transition: 0.2s ease-in-out;
                     }
@@ -38,14 +37,14 @@
                         left: 0;
                         transition: transform 0.2s ease-in-out;
                         transform-origin: bottom center;
-                        background: linear-gradient(to right, $primary-color, #8b25ff, $primary-color);
+                        background: linear-gradient(to right, $primary, #8b25ff, $primary);
                         transform: scaleX(0);
-                        border-radius: 100%;
+                        border-radius: 300px;
                       }
 
                       &:hover{
                         a{
-                            color: $primary-color;
+                            color: $primary;
                             text-shadow: 0 0 15px #b87aff;
                         }
                       }

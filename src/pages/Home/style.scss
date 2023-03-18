@@ -1,0 +1,162 @@
+@import '../../styles/scss/App.scss';
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .home-content{
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-top: 90px;
+        justify-content: space-evenly;
+        max-width: 1296px;
+        width: 100%;
+        z-index: 1;
+        padding: 32px;
+
+        .home-info{
+            max-width: 560px;
+            width: 100%;
+            height: 100%;
+            opacity: .7;
+            transform: scale(1.02);
+            transition: .4s;
+
+            p{
+                font-size: 20px;
+                letter-spacing: 2px;
+                font-weight: 200;
+                
+            }
+
+            .home-info_skills{
+                margin-top: 32px;
+
+                h3{
+                    text-transform: lowercase;
+                }
+
+                .info_skills-list{
+                    display: flex;
+                    margin-top: 32px;
+
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                        list-style: none;
+
+                        .info_skills-item{
+                            margin-right: 16px;
+                            margin-bottom: 32px;
+                            cursor: pointer;
+
+                            span{
+                                padding: 6px 14px;
+                                background-color: $bg-span_skills-light-hover;
+                                border-radius: 22px;
+                                transition: .4s ease-in-out;
+                                position: relative;
+                                opacity: .8;
+
+                                a{
+                                    color: $text-color-light;
+                                    text-decoration: none;
+                                    font-weight: 800;
+                                    transition: .4s ease-in-out;
+
+                                    
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: -2px;
+                                    left: -2px;
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 22px;
+                                    border: solid 2px #6523ff;
+                                    opacity: 0;
+                                    transform: scale(1.01);
+                                    z-index: -1;
+                                    transition: .2s ease-in-out;
+                                }
+
+                                &:hover:before{
+                                    transform: scale(1.04);
+                                    opacity: 1;
+                                }
+
+                                &:hover{
+                                    opacity: 1;
+                                    a{
+                                        color: #6523ff;
+                                        opacity: 1!important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .home-content_border{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: solid 0px #fff;
+            border-radius: 22px;
+            z-index: -99 !important;
+            transform: scale(1.02);
+            opacity: 0;
+            transition: .4s ease-in-out;
+        }
+
+        .home-imgs{
+            img{
+                width: 560px;
+                transition: .4s ease-in-out;
+
+                &:hover{
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+        &:hover {
+            &::after{
+                opacity: 1;
+                border: solid 1px #814bff;
+                transform: scale(1.03);
+                cursor: default;
+            }
+        }
+
+        &:hover .home-info{
+            transform: scale(1);
+            opacity: 1;
+            cursor: default;
+
+            .home-info_skills{
+
+                .info_skills-list{
+                    
+                    .info_skills-item{
+
+                        span{
+                            background-color: $bg-span_skills-light;
+
+                            a{
+                                color: $text-color-dark;  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
