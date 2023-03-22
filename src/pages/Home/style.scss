@@ -17,6 +17,11 @@
         z-index: 1;
         padding: 32px;
 
+        @media screen and (max-width: 1180px) {
+            flex-direction: column-reverse;
+            margin-top: 16px;
+        }
+
         .home-info{
             max-width: 560px;
             width: 100%;
@@ -24,6 +29,10 @@
             opacity: .7;
             transform: scale(1.02);
             transition: .4s;
+
+            @media screen and (max-width: 1180px) {
+                margin-top: 32px;
+            }
 
             p{
                 font-size: 20px;
@@ -42,6 +51,14 @@
                 .info_skills-list{
                     display: flex;
                     margin-top: 32px;
+
+                    img{
+                        width: auto;
+
+                        @media screen and (max-width: 1160px) {
+                            display: none;
+                        }
+                    }
 
                     ul{
                         display: flex;
@@ -78,7 +95,7 @@
                                     width: 100%;
                                     height: 100%;
                                     border-radius: 22px;
-                                    border: solid 2px #6523ff;
+                                    border: solid 2px $secondary;
                                     opacity: 0;
                                     transform: scale(1.01);
                                     z-index: -1;
@@ -92,10 +109,7 @@
 
                                 &:hover{
                                     opacity: 1;
-                                    a{
-                                        color: #6523ff;
-                                        opacity: 1!important;
-                                    }
+                                    background-color: transparent;
                                 }
                             }
                         }
@@ -117,13 +131,12 @@
         }
 
         .home-imgs{
+            max-width: 560px;
+            width: 100%;
             img{
-                width: 560px;
+                width: 100%;
                 transition: .4s ease-in-out;
 
-                &:hover{
-                    transform: scale(1.02);
-                }
             }
         }
 
@@ -140,23 +153,6 @@
             transform: scale(1);
             opacity: 1;
             cursor: default;
-
-            .home-info_skills{
-
-                .info_skills-list{
-                    
-                    .info_skills-item{
-
-                        span{
-                            background-color: $bg-span_skills-light;
-
-                            a{
-                                color: $text-color-dark;  
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }

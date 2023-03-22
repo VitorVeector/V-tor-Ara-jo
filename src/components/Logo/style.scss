@@ -4,8 +4,17 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
+    max-width: 320px;
+    width: 100%;
+
+    @media screen and (max-width: 1160px) {
+        max-width: 140px;
+    }
 
     h3 {
+        white-space: nowrap;
+        margin: 0 32px;
+        text-align: center;
         letter-spacing: 2px;
         font-size: $xx;
         font-weight: 200;
@@ -21,7 +30,7 @@
         left: 0;
         transition: transform 0.2s ease-in-out;
         transform-origin: bottom center;
-        background: linear-gradient(to right, #28143f, #004b64, #00b4db, #004b64, #28143f, #004b64, #00b4db, #004b64, #28143f);
+        background: linear-gradient(to right, #28143f09, #004b6465, #00b4db, #004b6465, #28143f09, #004b6465, #00b4db, #004b6465, #28143f09);
         background-size: 200% 100%;
         background-position: 0 0;
         animation: gradient 8s linear infinite;

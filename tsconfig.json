@@ -23,8 +23,7 @@
       "react",
       "react-dom",
       "react-scripts",
-      "node",
-      "*.svg"
+      "node"
     ]
   },
   "include": [

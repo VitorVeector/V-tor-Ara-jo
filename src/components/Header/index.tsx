@@ -1,28 +1,55 @@
+import { useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
+
 import { Logo } from '../Logo';
-import {Link} from 'react-router-dom'
-import './style.scss'
+import { NavItem } from '../NavItem';
+
+import './style.scss';
 
 export const Header = () => {
+    const [openNav, setOpenNav] = useState<boolean>(false);
+
+    const toggleBtnNav = () => {
+        setOpenNav(!openNav);
+    };
+
     return (
         <div className="header">
-            <div className='header-content'>
-                <Logo/>
-                <nav className='header-nav'>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/formation">Formation</Link></li>
-                        <li><Link to="/experience">Experience</Link></li>
-                        <li><Link to="/projects">Projects</Link></li>
-                        <li><Link to="/services">Services</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+            <div className="header-content">
+                <Logo />
+                <nav className="header-nav">
+                    <AiOutlineClose
+                        onClick={toggleBtnNav}
+                        className={openNav ? 'cls_active nav-close' : 'nav-close'}
+                    />
+                    <ul className={openNav ? 'nav_active' : ''}>
+                        <NavItem to="/" onClick={toggleBtnNav}>
+                            Home
+                        </NavItem>
+                        <NavItem to="/formation" onClick={toggleBtnNav}>
+                            Formation
+                        </NavItem>
+                        <NavItem to="/experience" onClick={toggleBtnNav}>
+                            Experience
+                        </NavItem>
+                        <NavItem to="/projects" onClick={toggleBtnNav}>
+                            Projects
+                        </NavItem>
+                        <NavItem to="/services" onClick={toggleBtnNav}>
+                            Services
+                        </NavItem>
+                        <NavItem to="/contact" onClick={toggleBtnNav}>
+                            Contact
+                        </NavItem>
                     </ul>
                 </nav>
                 <div className='header-btn'>
-                    <button className="theme-toggle">
-                        toogle theme
+                    <button onClick={toggleBtnNav} className="nav-btn">
+                        <GiHamburgerMenu className="hamburger-icon" />
                     </button>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
