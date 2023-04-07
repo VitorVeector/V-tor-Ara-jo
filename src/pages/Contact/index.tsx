@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import './style.scss'
 
 import { useForm, SubmitHandler } from "react-hook-form"
@@ -5,7 +6,6 @@ import { TypeInputs } from '../../types/formType'
 
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
-
 
 const keys = {
     serviceId: process.env.REACT_APP_SERVICE_ID ? process.env.REACT_APP_SERVICE_ID : '',
@@ -17,11 +17,13 @@ export const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<TypeInputs>();
     const formRef = useRef<HTMLFormElement>(null);
 
-    const onSubmit: SubmitHandler<TypeInputs> = (data) => {
+    console.log(errors)
+    
+    const onSubmit: SubmitHandler<TypeInputs> = () => {
         emailjs.sendForm(keys.serviceId, keys.templateId, formRef.current!, keys.publicKey)
             .then(res => {
                 console.log('SUCCESS!', res.status, res.text);
-            }, err =>  {
+            }, err => {
                 console.log('FAILED...', err);
             });
     }
@@ -34,16 +36,48 @@ export const Contact = () => {
                     <div className="form-input">
                         <div>
                             <label htmlFor="name">name</label>
-                            <input type="text" {...register('name')} />
+                            <input type="text" {...register('name', {
+                                required: "Name is required",
+                                minLength: {
+                                    value: 3,
+                                    message: "The min lenght is 3 letters"
+                                },
+                                maxLength: {
+                                    value: 60,
+                                    message: "The max lenght is 60 letters"
+                                }
+                            })} />
+                            <span>{errors.name?.message}</span>
                         </div>
                         <div>
                             <label htmlFor="email">email</label>
-                            <input type="email" placeholder='email@email.com' required {...register('email')} />
+                            <input type="email" placeholder='email@email.com' {...register('email', {
+                                required: {
+                                    value: true,
+                                    message: "Email is required"
+                                },
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: "Insert a valid email"
+                                }
+                            })} />
+                            <span>{errors.email?.message}</span>
                         </div>
                     </div>
                     <div className='messageContainer'>
                         <label htmlFor="message">message</label>
-                        <textarea id="message" rows={10} required {...register('message')}></textarea>
+                        <textarea id="message" rows={10} {...register('message', {
+                                required: "Message is required",
+                                minLength: {
+                                    value: 3,
+                                    message: "The min lenght is 10 letters"
+                                },
+                                maxLength: {
+                                    value: 300,
+                                    message: "The max lenght is 300 letters"
+                                }
+                            })}></textarea>
+                        <span>{errors.message?.message}</span>
                     </div>
                     <button className='sendBtn'>send</button>
                 </form>

@@ -1,6 +1,5 @@
 import './style.scss';
-import coala from '../../assets/Coala.webp';
-import skiz from '../../assets/skiz.webp';
+import profile from '../../assets/Profile.jpeg';
 import { motion } from 'framer-motion';
 
 const skills = [
@@ -52,7 +51,7 @@ export const Home = () => {
                     </motion.div>
                   ))}
                 </ul>
-                <img src={skiz} alt="" />
+                <img src={profile} alt="" />
               </div>
             </div>
           </div>
@@ -62,7 +61,7 @@ export const Home = () => {
               animate={{opacity: 1, y: 0}}
               exit={{opacity: 0, y: 200}}
               transition={{ duration: 1, delay: .1 }}>
-              <img src={coala} alt="" />
+              <img src={profile} alt="" />
             </motion.div>
           </div>
         </div>
