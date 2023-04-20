@@ -5,7 +5,10 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { TypeInputs } from '../../types/formType'
 
 import emailjs from '@emailjs/browser';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+
+import { useData } from '../../Hooks/useData';
+import { toast } from 'react-toastify';
 
 const keys = {
     serviceId: process.env.REACT_APP_SERVICE_ID ? process.env.REACT_APP_SERVICE_ID : '',
@@ -16,16 +19,20 @@ const keys = {
 export const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<TypeInputs>();
     const formRef = useRef<HTMLFormElement>(null);
+    const {isSubmiting, setIsSubmiting} = useData()
 
-    console.log(errors)
-    
     const onSubmit: SubmitHandler<TypeInputs> = () => {
-        emailjs.sendForm(keys.serviceId, keys.templateId, formRef.current!, keys.publicKey)
-            .then(res => {
-                console.log('SUCCESS!', res.status, res.text);
-            }, err => {
-                console.log('FAILED...', err);
-            });
+        setIsSubmiting(true)
+        setTimeout(() => {
+            try {    
+                emailjs.sendForm(keys.serviceId, keys.templateId, formRef.current!, keys.publicKey)
+                toast.success('Email successfully sent')
+            } catch (error) {
+                toast.error('Error to send email')   
+            } finally{
+                setIsSubmiting(false)
+            }
+        }, 2000)
     }
 
     return (
@@ -79,7 +86,7 @@ export const Contact = () => {
                             })}></textarea>
                         <span>{errors.message?.message}</span>
                     </div>
-                    <button className='sendBtn'>send</button>
+                    <button className={`sendBtn ${isSubmiting ? 'loading' : ''}`}>send</button>
                 </form>
             </div>
         </div>

@@ -1,12 +1,12 @@
-@import '../../styles/scss/App.scss';
+@import "../../styles/scss/App.scss";
 
-.contact-container{
+.contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 32px;
 
-    .contact-content{
+    .contact-content {
         max-width: 564px;
         padding: 32px;
         width: 100%;
@@ -17,7 +17,7 @@
         flex-direction: column;
         align-items: center;
 
-        .contact-title{
+        .contact-title {
             font-size: 18px;
             color: $text-color-light;
             background-color: #444;
@@ -28,48 +28,48 @@
             padding: 0 26px;
         }
 
-        .contact-form{
+        .contact-form {
             display: flex;
             flex-direction: column;
             width: 100%;
             border-top: 2px $text-color-dark solid;
             padding-top: 32px;
 
-            .form-input{
+            .form-input {
                 display: flex;
                 justify-content: space-around;
 
                 @media screen and (max-width: 612px) {
                     flex-direction: column;
 
-                    div{
+                    div {
                         width: 100% !important;
                     }
                 }
 
-                div{
+                div {
                     display: flex;
                     flex-direction: column;
                     width: 45%;
 
-                    label{
+                    label {
                         font-weight: bold;
                         font-size: 14px;
                         margin-left: 12px;
                         margin-bottom: 6px;
                     }
-                    
-                    input{
+
+                    input {
                         border-radius: 14px;
                         padding: 6px 14px;
                         background-color: $text-color-light;
                         border: unset;
                     }
-                    input::placeholder{
+                    input::placeholder {
                         color: $dark-background-color;
                     }
 
-                    span{
+                    span {
                         margin-top: 4px;
                         margin-left: 8px;
                         text-transform: lowercase;
@@ -79,25 +79,25 @@
                     }
                 }
             }
-            .messageContainer{
+            .messageContainer {
                 margin-top: 32px;
                 display: flex;
                 flex-direction: column;
-                label{
+                label {
                     margin-bottom: 6px;
                     margin-left: 12px;
                     font-weight: bold;
                     font-size: 14px;
                 }
-    
-                textarea{
+
+                textarea {
                     border-radius: 14px;
                     padding: 6px 14px;
                     background-color: $text-color-light;
                     border: unset;
                 }
 
-                span{
+                span {
                     margin-top: 4px;
                     margin-left: 8px;
                     text-transform: lowercase;
@@ -120,32 +120,55 @@
                 font-weight: bold;
                 color: $dark-background-color;
                 cursor: pointer;
-                transition: .4s ease-in-out;
-              
-                &::before {
-                  content: '';
-                  position: absolute;
-                  top: -4px;
-                  left: -4px;
-                  right: -4px;
-                  bottom: -4px;
-                  border-radius: 18px;
-                  box-shadow: 0 0 0 0 $dark-background-color;
-                  opacity: 0;
-                  transition: opacity .4s ease-in-out, box-shadow .4s ease-in-out;
-                }
-              
+                transition: 0.4s ease-in-out;
+
                 &:hover {
-                  background-color: $dark-background-color;
-                  color: $light-background-color;
-                  transform: scale(.98);
-              
-                  &::before {
-                    opacity: 1;
-                    box-shadow: 0 0 0 2px $light-background-color;
-                  }
+                    background-color: $dark-background-color;
+                    color: $light-background-color;
+                    transform: scale(0.98);
                 }
-              }
+
+                &:not(.loading):hover {
+                    background-color: $dark-background-color;
+                    color: $light-background-color;
+                    transform: scale(0.98);
+            
+                    &::before {
+                        opacity: 1;
+                        box-shadow: 0 0 0 2px $light-background-color;
+                    }
+                }
+            
+
+                &.loading {
+                    color: transparent;
+                    cursor: not-allowed;
+                    pointer-events: none;
+                    transition: none;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: calc(50% - 11px);
+                        left: calc(50% - 11px);
+                        width: 12px;
+                        height: 12px;
+                        border: 5px solid rgba(0, 0, 0, 0.1);
+                        border-top-color: $dark-background-color;
+                        border-radius: 50%;
+                        animation: spin 1s linear infinite;
+                    }
+                }
+            }
         }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
