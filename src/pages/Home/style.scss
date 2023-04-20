@@ -134,6 +134,7 @@
             max-width: 560px;
             width: 100%;
             img{
+                border: 3px solid $primary;
                 animation: blob 15s ease-in-out infinite;
                 width: 100%;
                 transition: .4s ease-in-out;
