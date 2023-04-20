@@ -134,9 +134,9 @@
             max-width: 560px;
             width: 100%;
             img{
+                animation: blob 15s ease-in-out infinite;
                 width: 100%;
                 transition: .4s ease-in-out;
-
             }
         }
 
@@ -154,5 +154,32 @@
             opacity: 1;
             cursor: default;
         }
+    }
+}
+
+@keyframes blob {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    15% {
+        border-radius: 50% 40% 70% 30% / 40% 60% 30% 70%;
+    }
+    30% {
+        border-radius: 40% 60% 70% 30% / 70% 40% 60% 30%;
+    }
+    45% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    60% {
+        border-radius: 40% 60% 70% 30% / 70% 40% 60% 30%;
+    }
+    75% {
+        border-radius: 50% 40% 70% 30% / 40% 60% 30% 70%;
+    }
+    90% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     }
 }
