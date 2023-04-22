@@ -20,7 +20,7 @@ export const Formation = () => {
                         Autoplay,
                     ]}
                     effect="cards"
-                    autoplay={{ delay: 5000 }}
+                    autoplay={{ delay: 2500 }}
                     grabCursor
                     centeredSlides
                     navigation
@@ -47,7 +47,7 @@ export const Formation = () => {
                         <FormationCard
                             title="Analysis and Systems Development"
                             subtitle="Estácio"
-                            content="The course of Analysis and Systems Development teaches how to design, document, specify, test, implement, and take care of the maintenance of computer systems and software."
+                            content="The Analysis and Systems Development course teaches how to design, document, specify, test, implement, and maintain computer systems and software. Brazil ranks 9th in the world for investment in information technology. Database administration and IT governance join software engineering-related service planning and implementation as disciplines studied for optimal professional performance."
                             imgLink="https://logodownload.org/wp-content/uploads/2014/12/estacio-logo-1.png"
                         />
                     </SwiperSlide>
