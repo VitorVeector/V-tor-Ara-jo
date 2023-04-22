@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Home } from '../../pages/Home';
 import { Contact } from '../../pages/Contact';
 import { NoPage } from '../../pages/NoPage';
+import { Formation } from '../../pages/Formation';
 
 export const Animated = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ export const Animated = () => {
       <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/formation" element={<Formation />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </motion.div>

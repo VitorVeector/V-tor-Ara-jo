@@ -5,7 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { TypeInputs } from '../../types/formType'
 
 import emailjs from '@emailjs/browser';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import { useData } from '../../Hooks/useData';
 import { toast } from 'react-toastify';

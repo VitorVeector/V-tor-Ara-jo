@@ -1,0 +1,65 @@
+@import "../../styles/scss/App.scss";
+
+.formation-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .formation-swiper {
+        max-width: 764px;
+        width: 100%;
+
+        .swiper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .swiper-wrapper {
+                max-width: 512px;
+                width: 100%;
+
+                .swiper-slide-shadow,
+                .swiper-slide-shadow-right,
+                .swiper-slide-shadow-left {
+                    display: none;
+                    box-shadow: unset !important;
+                }
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: $primary;
+                text-shadow: 0 0 15px $primary;
+            }
+        }
+    }
+}
+
+@keyframes blob-swiper {
+    0% {
+        border-radius: 34% 38% 25% 51% / 25% 52% 34% 51%;
+    }
+    15% {
+        border-radius: 40% 16% 33% 23% / 21% 28% 51% 24%;
+    }
+    30% {
+        border-radius: 31% 38% 27% 32% / 28% 18% 24% 48%;
+    }
+    45% {
+        border-radius: 24% 26% 34% 15% / 16% 20% 38% 47%;
+    }
+    60% {
+        border-radius: 32% 18% 22% 21% / 20% 21% 26% 49%;
+    }
+    75% {
+        border-radius: 26% 36% 19% 24% / 26% 19% 47% 33%;
+    }
+    90% {
+        border-radius: 25% 25% 28% 25% / 21% 26% 24% 31%;
+    }
+    100% {
+        border-radius: 34% 38% 25% 51% / 25% 52% 34% 51%;
+    }
+}
