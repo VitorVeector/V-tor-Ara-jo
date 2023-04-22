@@ -10,6 +10,10 @@
     overflow: hidden;
     border-radius: 20px;
 
+    @media screen and (max-width: 425px){
+        max-width: 320px;
+    }
+
     .formationcard-img{
         background-color: $primary;
         width: 100%;
