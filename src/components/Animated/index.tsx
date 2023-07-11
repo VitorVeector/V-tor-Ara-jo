@@ -4,6 +4,7 @@ import { Home } from '../../pages/Home';
 import { Contact } from '../../pages/Contact';
 import { NoPage } from '../../pages/NoPage';
 import { Formation } from '../../pages/Formation';
+import { Experience } from '../../pages/Experience';
 
 export const Animated = () => {
   const location = useLocation();
@@ -20,6 +21,7 @@ export const Animated = () => {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/formation" element={<Formation />} />
+        <Route path="/experience" element={<Experience />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </motion.div>

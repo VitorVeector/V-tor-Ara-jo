@@ -33,12 +33,6 @@ export const Header = () => {
                         <NavItem to="/experience" onClick={toggleBtnNav}>
                             Experience
                         </NavItem>
-                        <NavItem to="/projects" onClick={toggleBtnNav}>
-                            Projects
-                        </NavItem>
-                        <NavItem to="/services" onClick={toggleBtnNav}>
-                            Services
-                        </NavItem>
                         <NavItem to="/contact" onClick={toggleBtnNav}>
                             Contact
                         </NavItem>
