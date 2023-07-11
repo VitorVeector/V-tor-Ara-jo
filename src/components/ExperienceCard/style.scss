@@ -1,0 +1,47 @@
+@import '../../styles/scss/App.scss'; 
+
+.experienceCard-component{
+    position: relative;
+    max-width: 364px;
+    width: 100%;
+    box-shadow: 0 0 15px #000;
+    border: 1px solid $primary;
+    margin: 24px;
+    overflow: hidden;
+    border-radius: 20px;
+
+    @media screen and (max-width: 425px){
+        max-width: 320px;
+    }
+
+    .experienceCard-img{
+        background-color: $primary;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90px;
+        padding: 64px 0 90px 0;
+    }
+    
+    .experienceCard-content{
+        color: $text-color-dark;
+        background-color: $light-background-color;
+        margin-top: -18px;
+        z-index: 3;
+        padding: 24px;
+        border-radius: 22px 22px 0 0;
+
+        h3{
+            font-size: 16px;
+        }
+
+        h4{
+            font-size: 12px;
+        }
+
+        p{
+            margin-top: 16px;
+        }
+    }
+}
