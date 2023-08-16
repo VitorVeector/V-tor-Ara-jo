@@ -24,8 +24,6 @@ export const Formation = () => {
                     grabCursor
                     centeredSlides
                     navigation
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log("slide change")}
                 >
                     <SwiperSlide>
                         <FormationCard

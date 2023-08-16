@@ -33,7 +33,23 @@
             .swiper-button-prev,
             .swiper-button-next {
                 color: $primary;
+                border: $primary 1px solid;
+                border-radius: 100%;
+                padding: 36px;
                 text-shadow: 0 0 15px $primary;
+                box-shadow: 0 0 10px $primary;
+                transition: .2s ease-in-out;
+
+                &:hover{
+                    transform: scale(.95);
+                }
+            }
+
+            .swiper-button-prev{
+                left: 180px;
+            }
+            .swiper-button-next {
+                right: 180px;
             }
         }
     }
