@@ -7,14 +7,15 @@
     .header-content {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         height: 100%;
 
 
         .header-nav {
             position: relative;
-            
+            max-width: 780px;
             width: 100%;
+            justify-self: end;
 
             .nav-close {
                 position: absolute;
@@ -41,7 +42,7 @@
                 transition: .4s ease all;
                 top: 0;
                 right: 0;
-                justify-content: space-evenly;
+                justify-content: flex-end;
                 width: 100%;
 
                 @media screen and (max-width: 1160px) {
@@ -71,6 +72,10 @@
 
                 li {
                     position: relative;
+                    margin: 0 32px;
+                    &:last-child{
+                        margin: 0 0 0 32px;
+                    }
 
                     &.active {
                         a {
