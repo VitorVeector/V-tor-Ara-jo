@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCards, Navigation, A11y, Controller, Autoplay } from "swiper";
+import { EffectCards, Navigation, A11y, Controller, Autoplay, Pagination } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-cards";
 import "swiper/css";
@@ -18,12 +18,14 @@ export const Formation = () => {
                         A11y,
                         Controller,
                         Autoplay,
+                        Pagination
                     ]}
                     effect="cards"
                     autoplay={{ delay: 2500 }}
                     grabCursor
                     centeredSlides
                     navigation
+                    
                 >
                     <SwiperSlide>
                         <FormationCard

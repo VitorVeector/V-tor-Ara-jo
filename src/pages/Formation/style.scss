@@ -10,8 +10,6 @@
         max-width: 1227px;
         width: 100%;
 
-        
-
         .swiper {
             position: relative;
             display: flex;
@@ -43,13 +41,38 @@
                 &:hover{
                     transform: scale(.95);
                 }
+
+                @media screen and (max-width: 767px) {
+                    padding: 24px;
+                    background-color: #f0f8ff6f;
+
+                    &::after{
+                        font-size: 16px;
+                    }
+                }
             }
 
             .swiper-button-prev{
                 left: 180px;
+
+                @media screen and (max-width: 1186px) {
+                    left: 80px
+                }
+
+                @media screen and (max-width: 888px) {
+                    left: 20px
+                }
             }
             .swiper-button-next {
                 right: 180px;
+
+                @media screen and (max-width: 1186px) {
+                    right: 80px
+                }
+
+                @media screen and (max-width: 888px) {
+                    right: 20px
+                }
             }
         }
     }
