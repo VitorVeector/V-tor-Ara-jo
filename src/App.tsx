@@ -72,13 +72,13 @@ function App() {
                                         default: "bounce",
                                     },
                                     random: false,
-                                    speed: 1,
+                                    speed: .5,
                                     straight: false,
                                 },
                                 number: {
                                     density: {
                                         enable: true,
-                                        area: 800,
+                                        area: 1300,
                                     },
                                     value: 80,
                                 },
