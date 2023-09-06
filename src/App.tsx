@@ -34,23 +34,20 @@ function App() {
                             fpsLimit: 120,
                             interactivity: {
                                 events: {
-                                    onClick: {
-                                        enable: true,
-                                        mode: "push",
-                                    },
                                     onHover: {
                                         enable: true,
-                                        mode: "repulse",
+                                        mode: "repulse"
+                                    },
+                                    onClick: {
+                                        enable: true,
+                                        mode: "push"
                                     },
                                     resize: true,
                                 },
                                 modes: {
-                                    push: {
-                                        quantity: 6,
-                                    },
                                     repulse: {
-                                        distance: 150,
-                                        duration: 0.6,
+                                        distance: 200,
+                                        duration: 5,
                                     },
                                 },
                             },
@@ -80,13 +77,13 @@ function App() {
                                         enable: true,
                                         area: 1300,
                                     },
-                                    value: 80,
+                                    value: 40,
                                 },
                                 opacity: {
                                     value: 0.5,
                                 },
                                 shape: {
-                                    type: "circle",
+                                    type: "polygon",
                                 },
                                 size: {
                                     value: { min: .6, max: 2.5 },
