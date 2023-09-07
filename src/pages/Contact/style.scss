@@ -11,7 +11,8 @@
         padding: 32px;
         width: 100%;
         justify-content: center;
-        background-color: #444;
+        backdrop-filter: blur(5px);
+        box-shadow: #242424 0px 0px 20px;
         border-radius: 32px;
         display: flex;
         flex-direction: column;
@@ -21,7 +22,7 @@
         .contact-title {
             font-size: 18px;
             color: $text-color-light;
-            background-color: #444;
+            backdrop-filter: blur(5px);
             border-radius: 22px;
             margin-top: 16px;
             margin-bottom: -9px;
@@ -33,12 +34,11 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            border-top: 2px $text-color-dark solid;
-            padding-top: 32px;
+            padding: 32px 32px 0 32px;
 
             .form-input {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
 
                 @media screen and (max-width: 612px) {
                     flex-direction: column;
@@ -51,7 +51,6 @@
                 div {
                     display: flex;
                     flex-direction: column;
-                    width: 45%;
 
                     label {
                         font-weight: bold;
@@ -61,14 +60,22 @@
                     }
 
                     input {
-                        border-radius: 14px;
+                        border-radius: 6px;
                         padding: 6px 14px;
                         background-color: $text-color-light;
                         border: unset;
+                        border: 2px solid transparent;
+
+                        &::placeholder{
+                            color: $dark-background-color;
+                        }
+
+                        &:focus{
+                            border: 2px solid $primary;  
+                            outline: none;
+                        }
                     }
-                    input::placeholder {
-                        color: $dark-background-color;
-                    }
+                    
 
                     span {
                         margin-top: 4px;
@@ -80,6 +87,7 @@
                     }
                 }
             }
+
             .messageContainer {
                 margin-top: 32px;
                 display: flex;
@@ -96,6 +104,7 @@
                     padding: 6px 14px;
                     background-color: $text-color-light;
                     border: unset;
+                    resize: none;
                 }
 
                 span {
@@ -126,7 +135,7 @@
                 &:hover {
                     background-color: $dark-background-color;
                     color: $light-background-color;
-                    transform: scale(0.98);
+                    transform: scale(0.99);
                 }
 
                 &:not(.loading):hover {

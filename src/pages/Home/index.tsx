@@ -3,25 +3,25 @@ import profile from "../../assets/Profile.jpeg";
 import { motion } from "framer-motion";
 
 const skills = [
-    {
-        name: "JavaScript",
-        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    },
-    { name: "TypeScript", link: "https://www.typescriptlang.org/" },
-    { name: "React.JS", link: "https://reactjs.org/" },
-    { name: "React Native", link: "https://reactnative.dev/" },
-    { name: "Next.JS", link: "https://nextjs.org/" },
-    { name: "Node.JS", link: "https://nodejs.org/en/" },
-    { name: "Express.JS", link: "https://expressjs.com/" },
-    { name: "S.O.L.I.D", link: "https://en.wikipedia.org/wiki/SOLID" },
-    { name: "Sass / Css", link: "https://sass-lang.com/" },
-    { name: "ChakraUI", link: "https://chakra-ui.com/" },
-    { name: "StyledComponents", link: "https://styled-components.com/" },
-    { name: "MaterialUI", link: "https://mui.com/" },
-    { name: "PrismicCMS", link: "https://prismic.io/" },
-    { name: "Stripe", link: "https://stripe.com/" },
-    { name: "Framer Motion", link: "https://www.framer.com/motion/" },
-];
+    { name: "JavaScript" },
+    { name: "TypeScript" },
+    { name: "React.js" },
+    { name: "React Native" },
+    { name: "Next.js" },
+    { name: "Node.js" },
+    { name: "Express.JS" },
+    { name: "SQL" },
+    { name: "Sequelize ORM" },
+    { name: "S.O.L.I.D" },
+    { name: "Sass / Css" },
+    { name: "ChakraUI" },
+    { name: "StyledComponents" },
+    { name: "MaterialUI" },
+    { name: "PrismicCMS" },
+    { name: "Stripe" },
+    { name: "Framer Motion" }
+]
+;
 
 const skillVariants = skills.map((skill, index) => ({
     hidden: { opacity: 0, y: -50 },
@@ -56,11 +56,7 @@ export const Home = () => {
                                         >
                                             <li className="info_skills-item">
                                                 <span>
-                                                    <a
-                                                        href={skill.link}
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                    >
+                                                    <a rel="noreferrer">
                                                         {skill.name}
                                                     </a>
                                                 </span>
