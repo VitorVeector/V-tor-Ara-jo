@@ -11,7 +11,6 @@ import { loadSlim } from "tsparticles-slim";
 import { useCallback } from "react";
 
 function App() {
-    console.log(process.env.ACCESS_MASTER)
     const particlesInit = useCallback(async (engine: Engine) => {
         console.log(engine);
         await loadSlim(engine);

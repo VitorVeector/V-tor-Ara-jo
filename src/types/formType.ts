@@ -1,5 +1,5 @@
 export type TypeInputs = {
-    email: string,
-    name: string,
+    user_email: string,
+    user_name: string,
     message: string
 };

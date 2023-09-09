@@ -28,7 +28,7 @@ export const Contact = () => {
                 emailjs.sendForm(keys.serviceId, keys.templateId, formRef.current!, keys.publicKey)
                 toast.success('Email successfully sent')
             } catch (error) {
-                toast.error('Error to send email')   
+                toast.error(`Error to send email: ${error}`)   
             } finally{
                 setIsSubmiting(false)
             }
@@ -43,7 +43,7 @@ export const Contact = () => {
                     <div className="form-input">
                         <div>
                             <label htmlFor="name">name</label>
-                            <input type="text" {...register('name', {
+                            <input type="text" {...register('user_name', {
                                 required: "Name is required",
                                 minLength: {
                                     value: 3,
@@ -54,11 +54,11 @@ export const Contact = () => {
                                     message: "The max lenght is 60 letters"
                                 }
                             })} />
-                            <span>{errors.name?.message}</span>
+                            <span>{errors.user_name?.message}</span>
                         </div>
                         <div>
                             <label htmlFor="email">email</label>
-                            <input type="email" placeholder='email@email.com' {...register('email', {
+                            <input type="email" placeholder='email@email.com' {...register('user_email', {
                                 required: {
                                     value: true,
                                     message: "Email is required"
@@ -68,7 +68,7 @@ export const Contact = () => {
                                     message: "Insert a valid email"
                                 }
                             })} />
-                            <span>{errors.email?.message}</span>
+                            <span>{errors.user_email?.message}</span>
                         </div>
                     </div>
                     <div className='messageContainer'>
