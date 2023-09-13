@@ -12,7 +12,6 @@ import { useCallback } from "react";
 
 function App() {
     const particlesInit = useCallback(async (engine: Engine) => {
-        console.log(engine);
         await loadSlim(engine);
     }, []);
 
