@@ -55,17 +55,25 @@
                     flex-direction: column;
                     justify-content: space-around;
                     align-items: center;
-                    backdrop-filter: blur(80px);
+                    backdrop-filter: blur(130px);
                     -webkit-backdrop-filter: blur(80px);
                     transform: translate(0);
                     height: 100vh;
-                    opacity: 0;
-                    transition: .3s ease all;
+                    width: 50%;
+                    transition: .7s ease all;
                     z-index: -5;
+                    visibility: hidden;
+                    right: -160px;
+                    border-radius: 20px 0 0 180px;
+
+                    @media screen and (max-width: 768px) {
+                        width: 75%;
+                    }
 
                     &.nav_active {
-                        opacity: 1;
+                        visibility: visible;
                         z-index: 5;
+                        right: -20px;
                     }
 
                     li {
@@ -78,8 +86,13 @@
                 li {
                     position: relative;
                     margin: 0 32px;
-                    &:last-child{
+
+                    &:last-child {
                         margin: 0 0 0 32px;
+
+                        @media screen and (max-width: 1160px) {
+                            margin: 0 0 0 0px;
+                        }
                     }
 
                     &.active {
@@ -87,6 +100,7 @@
                             opacity: 1;
                             text-shadow: 0 0 15px #ffffff;
                         }
+
                         &:after {
                             transform: scaleX(1);
                         }

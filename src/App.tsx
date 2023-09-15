@@ -38,8 +38,7 @@ function App() {
                                         mode: "repulse"
                                     },
                                     onClick: {
-                                        enable: true,
-                                        mode: "push"
+                                        enable: false,
                                     },
                                     resize: true,
                                 },

@@ -3,11 +3,14 @@ import { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 
 import { db } from "../../firebase";
-import { DocumentData, DocumentSnapshot, QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
+import { DocumentData, QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
+import { toast } from "react-toastify";
+import { FirebaseError } from "firebase/app";
 
 export const Home = () => {
     const [technologies, setTechnologies] = useState<string[]>([]);
     const [info, setInfo] = useState<string>('');
+    const [label, setLabel] = useState<string>('');
     
     const homeCollectionsRef = collection(db, "home")
     useEffect(() => {
@@ -18,11 +21,15 @@ export const Home = () => {
                     const dataRes = doc.data();
                     const technologies = dataRes.technologies;
                     const info = dataRes.info;
+                    const label = dataRes.label;
                     setInfo(info);
+                    setLabel(label);
                     setTechnologies(technologies)
                 })
-            } catch (error) {
-                console.log(error)
+            } catch (err) {
+                if(err instanceof FirebaseError){
+                    toast.error(err.message)
+                }
             }
             
         }
@@ -45,7 +52,7 @@ export const Home = () => {
                             {info}
                         </p>
                         <div className="home-info_skills">
-                            <h3>my knowledge includes:</h3>
+                            <h3>{label}</h3>
                             <div className="info_skills-list">
                                 <ul>
                                     {technologies.map((skill, index) => (
