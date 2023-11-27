@@ -76,12 +76,12 @@ export const Home = () => {
                     </div>
                     <div className="home-imgs">
                         <motion.div
-                            initial={{ opacity: 0, y: 60 }}
+                            initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 200 }}
                             transition={{ duration: 1, delay: 0.1 }}
                         >
-                                <img src="https://uploaddeimagens.com.br/images/004/602/357/full/Profile.jpeg?1694283421" alt="" />
+                                <img src="https://uploaddeimagens.com.br/images/004/674/950/full/Captura_de_tela_2023-11-27_093934.png?1701088804" alt="" />
                         </motion.div>
                     </div>
                 </div>
